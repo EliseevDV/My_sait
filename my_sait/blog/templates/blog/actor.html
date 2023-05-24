@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+
+    <title>{{actor.actor_name}}</title>
+</head>
+<body>
+
+
+	<img src="{{ actor_photo }}" alt="{{ actor.actor_name }}" width="220" >
+    <h1>{{actor.actor_name}}</h1>
+    <em>{{ info |safe }}</em>
+
+</body>
+</html>

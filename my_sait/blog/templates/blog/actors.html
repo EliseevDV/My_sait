@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Блог о актерах</title>
+</head>
+<body>
+ <h1 style="text-align: center;">Блог о актерах</h1>
+{% for actor_name, actor_data in actors.items %}
+    <img src="{{ actor_data.actor_photo }}" alt="{{ actor_data.actor_name }}" style="display: block; margin: 0 auto;" width="220" >
+    <h3 style="text-align: center;"><a href="{% url 'post_detail_actor' actor_name %}">{{ actor_name }}</a></h3><br><br>
+{% endfor %}
+
+</body>
+</html>
