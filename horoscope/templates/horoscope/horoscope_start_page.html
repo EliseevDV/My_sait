@@ -1,0 +1,27 @@
+{% extends 'base.html'%}
+{% load static  %}
+{% load my_filter %}
+{% block css_edishional%}
+<link rel="stylesheet"  href="{% static 'horoscope/css/index.css' %}">
+{% endblock %}
+
+{% block title %}
+Приложение гороскоп!
+{% endblock %}
+
+{% block content %}
+{% include 'horoscope/includes/navbar.html' %}
+
+
+<h1>Приложение гороскоп.</h1>
+
+
+<ul>
+    {% for sing, value in zodiac_list.items %}
+    <li><a href="{% url 'zodiac_info' sing_zodiac=sing %}">{{ value|split|first|title }}</a></li>
+    {% endfor %}
+</ul>
+
+
+{% endblock %}
+

@@ -1,0 +1,24 @@
+{% extends 'base.html'%}
+{% load static  %}
+{% load my_filter %}
+{% block css_edishional%}
+<link rel="stylesheet"  href="{% static 'horoscope/css/info.css' %}">
+{% endblock %}
+
+{% block title %}
+Гороскоп для {{name_zodiac.title}}
+{% endblock %}
+
+{% block content %}
+
+{% include 'horoscope/includes/navbar_zodiac.html' %}
+        <h1>{{info|split|first|title}}</h1>
+
+<h2><strong>Гороскоп на сегодня</strong></h2>
+<p>{{zodiac_discript.today}}</p>
+<h2><strong>Гороскоп на завтра</strong></h2>
+<p>{{zodiac_discript.tomorrow}}</p>
+<h2><strong>Гороскоп на послезавтра</strong></h2>
+<p>{{zodiac_discript.tomorrow02}}</p>
+
+{% endblock %}

@@ -1,0 +1,7 @@
+{% load my_filter %}
+<nav>
+   <a href="{% url 'start_page_horoscope'  %}">Гороскоп</a>
+  {% for sing, value in zodiac_list.items %}
+  <a href="{% url 'zodiac_info' sing_zodiac=sing %}">{{ value|split|first|title }}</a>
+     {% endfor %}
+</nav>

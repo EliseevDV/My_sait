@@ -1,0 +1,12 @@
+{% extends 'base.html'%}
+{% block title %}
+    Стихии
+{% endblock %}
+{% block content %}
+
+{% include 'horoscope/includes/navbar.html' %} <br><br>
+Стихии знаков гороскопа <br>
+    {% for type in types_data %}
+    <h3><a href="{% url 'type_info' type %}">{{ type.title }}</a></h3>
+    {% endfor %}
+{% endblock %}

@@ -1,0 +1,11 @@
+{% extends 'base.html'%}
+
+{% block title %}
+<title>Задача на {{day_week.title}}</title>
+{% endblock %}
+
+{% block content %}
+{% include 'horoscope/includes/navbar.html' %}
+<h2>Сегодня в {{day_week.title}}:</h2>
+<h4>{{discription_day_week}}</h4>
+{% endblock %}

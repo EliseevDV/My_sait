@@ -1,0 +1,14 @@
+{% extends 'base.html'%}
+
+{% block title %}
+<title>Список дел</title>
+{% endblock %}
+
+{% block content %}
+{% include 'horoscope/includes/navbar.html' %}
+<h2>Добро пожаловать в приложение «Список дел»</h2>
+<p>Здесь будут показаны все ваши дела на ближайшую неделю</p>
+{%for item in data%}
+<h4><a href="{% url 'weeks_info' item %}">{{item.title}}</a></h4>
+{%endfor%}
+{% endblock %}

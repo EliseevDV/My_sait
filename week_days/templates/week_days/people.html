@@ -1,0 +1,11 @@
+{% extends 'base.html'%}
+{% block title %}
+    People
+{% endblock %}
+{% block content %}
+{% include 'horoscope/includes/navbar.html' %}
+    <h2>Информации о людях</h2>
+{% for person in people %}
+<p><a href="{% url 'people_info' person.name %}">{{ person.name|title }}</a></p>
+{% endfor %}
+{% endblock %}

@@ -1,0 +1,22 @@
+{% extends 'base.html'%}
+
+{% block title %}
+<title>{{people_detail}}</title>
+{% endblock %}
+
+{% block content %}
+{% include 'horoscope/includes/navbar.html' %}
+<h2>Информация о {{people_detail}}</h2>
+{% for person in people %}
+{% if person.name == people_detail %}
+<div>
+    <h5>Имя: {{person.name}}</h5>
+    <p>Возраст: {{person.age}}</p>
+    <p>Телефон: {{person.phone}}</p>
+</div>
+
+{%endif%}
+{%empty%}
+<p>Нет данных</p>
+{% endfor %}
+{% endblock %}
